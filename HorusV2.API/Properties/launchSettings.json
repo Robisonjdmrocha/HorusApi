@@ -1,0 +1,12 @@
+{
+  "profiles": {
+    "HorusV2.API": {
+      "commandName": "Project",
+      "launchBrowser": true,
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      },
+      "applicationUrl": "https://localhost:49721;http://localhost:49722"
+    }
+  }
+}

@@ -1,0 +1,118 @@
+/*
+    * Obtenção de dados obrigatórios para realizar a transmissão.
+    *
+    * 
+    * ------------- DISPENSAÇÃO -------------
+    *  Estabelecimento:
+    *      CNES do estabelecimento
+    *  Usuário SUS:
+    *      CPF ou CNS (Apenas um)
+    *      Peso (Somente quando o componente for especializado da assistência farmacêutica)
+    *      Altura (Somente quando o componente for especializado da assistência farmacêutica)
+    *  Caracterização: 
+    *      Código de Origem (Número da movimentação),
+    *      Data de Dispensação
+    *  Itens: 
+    *      Código de Origem do produto (ID do item da movimentação),
+    *      Numero - (CATMAT),
+    *      Tipo de Produto - B Componente Básico da Assistência Farmacêutica
+                             E Componente Especializado da Assistência Farmacêutica
+                             S Componente Estratégico da Assistência Farmacêutica
+                             O Outros
+    *      Lote, 
+    *      Data de Validade,
+    *      Quantidade,
+    *      Notificação (Para os medicamentos à base de talidomida),
+    *      CID-10 (Somente quando o componente possuir ou o mesmo for especializado da assistência farmacêutica)
+    *
+    * 
+    *  ------------- SAÍDA -------------
+    *  Estabelecimento:
+    *      CNES do estabelecimento
+    *      Tipo do estabelecimento - A Almoxarifado central
+                                  R Almoxarifado regional/Regional de Saúde
+                                  F Farmácia/Unidade de Saúde
+    *  Caracterização: 
+    *      Código de Origem (Número da movimentação),
+    *      Data de Saída
+    *      Estabelecimento destino (CNES ou CNPJ)
+    *      Tipo de saída - S-AE Saída por ajuste de estoque
+                        S-AEA Saída por amostra, exposição e análise
+                        S-TR Saída por transferência/remanejamento
+                        S-PE Saída por perda
+                        S-D Saída por doação
+                        S-VV Saída por validade vencida
+                        S-DD Saída por distribuição
+                        S-DEP Devolução de entrada de produto
+                        S-EE Saída por devolução de empréstimo
+                        S-E Saída para empréstimo
+                        S-AS Saída por apreensão sanitária
+                        S-PA Saída para usuário SUS sem CNS
+    *  Itens: 
+    *      Código de Origem do produto (ID do item da movimentação),
+    *      Numero - (CATMAT),
+    *      Tipo de Produto - B Componente Básico da Assistência Farmacêutica
+                          E Componente Especializado da Assistência Farmacêutica
+                          S Componente Estratégico da Assistência Farmacêutica
+                          O Outros
+    *      Lote, 
+    *      Data de Validade,
+    *      Quantidade,
+    *      CNPJ do Fabricante OU Nome do Fabricante Internacional
+    *
+    * 
+    *  ------------- ENTRADA -------------
+    *  Estabelecimento:
+    *      CNES do estabelecimento
+    *      Tipo do estabelecimento - A Almoxarifado central
+                                  R Almoxarifado regional/Regional de Saúde
+                                  F Farmácia/Unidade de Saúde
+    *  Caracterização: 
+    *      Código de Origem (Número da movimentação),
+    *      Data de Entrada
+    *      Identificação do distribuidor da entrada (CNPJ do distribuidor)  ou estabelecimento que enviou a entrada (CNES do estabelecimento)
+    *      Número do Documento (Número de Nota Fiscal, número de guia de remessa, entre outros)
+    *      Tipo de entrada - E-EVENTUAL Entrada eventual
+                        E-O Entrada ordinária
+                        E-AE Ajuste de estoque
+                        E-D Doação
+                        E- PER Permuta
+                        E-SI Saldo de implantação
+                        E-T Transferência/remanejamento
+    *  Itens: 
+    *      Código de Origem do produto (ID do item da movimentação),
+    *      Numero - (CATMAT),
+    *      Tipo de Produto - B Componente Básico da Assistência Farmacêutica
+                          E Componente Especializado da Assistência Farmacêutica
+                          S Componente Estratégico da Assistência Farmacêutica
+                          O Outros
+    *      Lote, 
+    *      Data de Validade,
+    *      Quantidade,
+    *      CNPJ do Fabricante OU Nome do Fabricante Internacional
+    *      Valor unitário do produto
+    *
+    *
+    * 
+    *  ------------- POSIÇÃO DE ESTOQUE -------------
+    *  Estabelecimento:
+    *      CNES do estabelecimento
+    *      Tipo do estabelecimento - A Almoxarifado central
+                                  R Almoxarifado regional/Regional de Saúde
+                                  F Farmácia/Unidade de Saúde
+    *  Caracterização: 
+    *      Código de Origem (Número da movimentação),
+    *      Data da posição de estoque
+    *  Itens: 
+    *      Código de Origem do produto (ID do item da movimentação),
+    *      Numero - (CATMAT),
+    *      Tipo de Produto - B Componente Básico da Assistência Farmacêutica
+                          E Componente Especializado da Assistência Farmacêutica
+                          S Componente Estratégico da Assistência Farmacêutica
+                          O Outros
+    *      Lote, 
+    *      Data de Validade,
+    *      Quantidade,
+    *      CNPJ do Fabricante OU Nome do Fabricante Internacional
+    *                               
+*/

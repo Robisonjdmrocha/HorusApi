@@ -1,0 +1,31 @@
+1º-Configure o IIS e o Application Pool quando publicar:
+
+	_Configure o Application Pool para usar "No Managed Code"
+	_Defina "Start Mode" como "AlwaysRunning"
+	_Defina "Idle Time-out (minutes)" como 0 para desativar o timeout
+	_Desative a reciclagem automática do pool de aplicativos
+
+
+2º-Crie um arquivo web.config na raiz do seu projeto (ou modifique o existente) para garantir que o aplicativo permaneça ativo: Exemplo como dever ficar:
+	<?xml version="1.0" encoding="utf-8"?>
+	<configuration>
+  		<location path="." inheritInChildApplications="false">
+    		<system.webServer>
+				<handlers>
+					<add name="aspNetCore" path="*" verb="*" modules="AspNetCoreModuleV2" resourceType="Unspecified" />
+				</handlers>
+				<aspNetCore processPath="dotnet" 
+						  arguments=".\SeuProjeto.dll" 
+						  stdoutLogEnabled="true" 
+						  stdoutLogFile=".\logs\stdout" 
+						  hostingModel="InProcess">
+				  <environmentVariables>
+					<environmentVariable name="ASPNETCORE_ENVIRONMENT" value="Production" />
+				  </environmentVariables>
+				</aspNetCore>
+				<applicationInitialization doAppInitAfterRestart="true">
+					<add initializationPage="/" />
+				</applicationInitialization>
+			</system.webServer>
+		</location>
+	</configuration>

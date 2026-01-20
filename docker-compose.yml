@@ -1,0 +1,13 @@
+services:
+  horusv2-api:
+    build:
+      context: .
+      dockerfile: HorusV2.API/Dockerfile
+    ports:
+      - "8080:8080"
+    env_file:
+      - HorusV2.API/.env
+    volumes:
+      - ./HorusV2.API/.env:/app/.env:ro
+      - ./HorusV2.API/Logs:/app/Logs
+    restart: unless-stopped
