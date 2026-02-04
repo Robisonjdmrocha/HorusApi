@@ -1,4 +1,4 @@
-# HorusV2 API (.NET 8)
+# HorusV2 API (.NET 9)
 
 API de integração com o Hórus (BNAFAR) para consulta de protocolos e controle de transmissões, com validação básica de sessão via headers, persistência em SQL Server e job diário automatizado.
 
