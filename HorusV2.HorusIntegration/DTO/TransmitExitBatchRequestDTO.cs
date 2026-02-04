@@ -33,6 +33,7 @@ public class SaidaItem
     public string CodigoOrigem { get; set; }
     public string SiglaProgramaSaude { get; set; }
     public int Quantidade { get; set; }
+    public decimal ValorUnitario { get; set; }
 }
 
 public class SaidaIum

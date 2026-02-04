@@ -27,7 +27,10 @@ public static class ObservabilityConfiguration
         Log.Logger = new LoggerConfiguration()
             .ReadFrom.Configuration(configuration)
             .Enrich.FromLogContext()
-            .WriteTo.File(logFilePath, rollingInterval: RollingInterval.Day)
+            .WriteTo.File(
+                logFilePath,
+                rollingInterval: RollingInterval.Day,
+                outputTemplate: "{Timestamp:yyyy-MM-dd HH:mm:ss.fff zzz} [{Level:u3}] {TraceId} {Message:lj}{NewLine}{Exception}")
             .CreateLogger();
     }
 }
