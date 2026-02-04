@@ -23,6 +23,7 @@ public class PosicaoEstoqueItem
     public string TipoProduto { get; set; }
     public string CodigoOrigem { get; set; }
     public string SiglaProgramaSaude { get; set; }
+    public decimal ValorUnitario { get; set; }
     public int Quantidade { get; set; }
 }
 

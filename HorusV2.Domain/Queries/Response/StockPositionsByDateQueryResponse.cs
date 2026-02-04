@@ -4,7 +4,7 @@ public class StockPositionsByDateQueryResponse
 {
     public StockPositionsByDateQueryResponse() {}
 
-    public StockPositionsByDateQueryResponse(string cnesEstabelecimento, string tipoEstabelecimento, string codigoOrigemPosicaoEstoque, DateTime dataPosicao, int codigoOrigemProduto, string tipoProduto, string numeroProdutoCatmat, string numeroLote, int quantidade, DateTime dataValidade, string identificacaoFabricante, int ordemEnvio)
+    public StockPositionsByDateQueryResponse(string cnesEstabelecimento, string tipoEstabelecimento, string codigoOrigemPosicaoEstoque, DateTime dataPosicao, int codigoOrigemProduto, string tipoProduto, string numeroProdutoCatmat, string numeroLote, int quantidade, DateTime dataValidade, string identificacaoFabricante, int ordemEnvio, decimal valorUnitario)
     {
         CNESEstabelecimento = cnesEstabelecimento;
         TipoEstabelecimento = tipoEstabelecimento;
@@ -18,6 +18,7 @@ public class StockPositionsByDateQueryResponse
         DataValidade = dataValidade;
         IdentificacaoFabricante = identificacaoFabricante;
         OrdemEnvio = ordemEnvio;
+        ValorUnitario = valorUnitario;
     }
 
     public string CNESEstabelecimento { get; set; }
@@ -31,5 +32,6 @@ public class StockPositionsByDateQueryResponse
     public int Quantidade { get; set; }
     public DateTime DataValidade { get; set; }
     public string IdentificacaoFabricante { get; set; }
-    public int OrdemEnvio { get; set; } 
+    public int OrdemEnvio { get; set; }
+    public decimal ValorUnitario { get; set; }
 }

@@ -3,7 +3,7 @@
 public class ExitsByDateQueryResponse
 {
     public ExitsByDateQueryResponse() {}
-    public ExitsByDateQueryResponse(string cnesEstabelecimento, string tipoEstabelecimento, int codigoOrigemSaida, DateTime dataSaida, int codigoOrigemProduto, string documentoEstabelecimentoDestino, string tipoSaida, string tipoProduto, string numeroProdutoCatmat, string numeroLote, int quantidade, DateTime dataValidade, string documentoUsuarioSus, string identificacaoFabricante)
+    public ExitsByDateQueryResponse(string cnesEstabelecimento, string tipoEstabelecimento, int codigoOrigemSaida, DateTime dataSaida, int codigoOrigemProduto, string documentoEstabelecimentoDestino, string tipoSaida, string tipoProduto, string numeroProdutoCatmat, string numeroLote, int quantidade, DateTime dataValidade, string documentoUsuarioSus, string identificacaoFabricante, decimal valorUnitario)
     {
         CNESEstabelecimento = cnesEstabelecimento;
         TipoEstabelecimento = tipoEstabelecimento;
@@ -19,6 +19,7 @@ public class ExitsByDateQueryResponse
         DataValidade = dataValidade;
         DocumentoUsuarioSus = documentoUsuarioSus;
         IdentificacaoFabricante = identificacaoFabricante;
+        ValorUnitario = valorUnitario;
     }
 
     public string CNESEstabelecimento { get; set; }
@@ -35,4 +36,5 @@ public class ExitsByDateQueryResponse
     public DateTime DataValidade { get; set; }
     public string DocumentoUsuarioSus { get; set; }
     public string IdentificacaoFabricante { get; set; }
+    public decimal ValorUnitario { get; set; }
 }

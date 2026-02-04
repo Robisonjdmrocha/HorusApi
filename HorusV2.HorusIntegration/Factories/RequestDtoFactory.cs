@@ -110,7 +110,8 @@ public static class RequestDtoFactory
                 TipoProduto = query.TipoProduto,
                 Lote = query.NumeroLote,
                 NomeFabricanteInternacional = query.IdentificacaoFabricante.ToString(),
-                Quantidade = query.Quantidade
+                Quantidade = query.Quantidade,
+                ValorUnitario = query.ValorUnitario
             };
 
             exitItens.Add(item);
@@ -152,7 +153,8 @@ public static class RequestDtoFactory
                 TipoProduto = query.TipoProduto,
                 Lote = query.NumeroLote,
                 Quantidade = query.Quantidade,
-                NomeFabricanteInternacional = query.IdentificacaoFabricante.ToString()
+                NomeFabricanteInternacional = query.IdentificacaoFabricante.ToString(),
+                ValorUnitario = query.ValorUnitario
             };
 
             stockPositionItems.Add(item);

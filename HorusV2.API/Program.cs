@@ -6,6 +6,8 @@ using HorusV2.Application.Settings;
 using HorusV2.Core.Helpers;
 using HorusV2.Domain.Entities;
 using HorusV2.HorusIntegration.Configuration;
+using Serilog;
+using Serilog.Context;
 
 WebApplicationBuilder appBuilder = WebApplication.CreateBuilder(args);
 
@@ -47,6 +49,18 @@ appBuilder.Services.AddScoped<RequestContextStorage<StreamingRequestHistory>>();
 WebApplication app = appBuilder.Build();
 
 app.UseCors("AllowAll");
+app.Use(async (context, next) =>
+{
+    using (LogContext.PushProperty("TraceId", context.TraceIdentifier))
+    {
+        await next();
+    }
+});
+app.UseSerilogRequestLogging(options =>
+{
+    options.MessageTemplate =
+        "HTTP {RequestMethod} {RequestPath} responded {StatusCode} in {Elapsed:0.0000} ms";
+});
 app.UseSwagger();
 app.UseSwaggerUI(options =>
 {
