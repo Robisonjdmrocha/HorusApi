@@ -30,8 +30,8 @@ ASPNETCORE_URLS=http://+:8080
 
 RelationalDatabaseSettings__ConnectionString=Server=HOST;Database=DATABASE;User Id=USER;Password=PASSWORD;MultipleActiveResultSets=True;TrustServerCertificate=True;
 
-HorusIntegrationSettings__IbgeCode=355410
-HorusIntegrationSettings__UserId=12
+HorusIntegrationSettings__IbgeCode=codigoIbge
+HorusIntegrationSettings__UserId=usuarioId
 HorusIntegrationSettings__BaseUri=https://servicoshm.saude.gov.br/bnafar
 HorusIntegrationSettings__AuthUri=https://servicoshm.saude.gov.br/jwtauth/auth
 HorusIntegrationSettings__UserAccess=USUARIO
